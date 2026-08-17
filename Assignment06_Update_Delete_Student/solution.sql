@@ -1,11 +1,28 @@
--- Create database if required
+CREATE DATABASE StudentDB;
+USE StudentDB;
 
--- Create Student table
+CREATE TABLE Student (
+    StudentID INT PRIMARY KEY,
+    StudentName VARCHAR(50),
+    DepartmentID INT
+);
 
--- Insert sample records
+INSERT INTO Student (StudentID, StudentName, DepartmentID)
+VALUES
+(1001, 'Arun', 101),
+(1002, 'Priya', 102),
+(1003, 'Karthik', 101),
+(1004, 'Rahul', 104);
 
--- Update Karthik's DepartmentID
+SELECT * FROM Student;
 
--- Delete StudentID 1002
+UPDATE Student
+SET DepartmentID = 103
+WHERE StudentName = 'Karthik'
+  AND DepartmentID = 101;
 
--- Display all records
+DELETE FROM Student
+WHERE StudentID = 1002;
+
+
+SELECT * FROM Student;
