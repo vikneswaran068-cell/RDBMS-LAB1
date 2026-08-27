@@ -1,11 +1,9 @@
---- Create Course table
+
 CREATE TABLE Course (
     CourseID INT PRIMARY KEY,
     CourseName VARCHAR(100),
     Credits INT
 );
-
--- Insert values into Course table
 INSERT INTO Course (CourseID, CourseName, Credits)
 VALUES
 (201, 'Database Systems', 4),
@@ -13,7 +11,6 @@ VALUES
 (203, 'Mathematics', 4);
 
 
--- Create Enrollment table
 CREATE TABLE Enrollment (
     EnrollmentID INT PRIMARY KEY,
     StudentID INT,
@@ -21,7 +18,7 @@ CREATE TABLE Enrollment (
     FOREIGN KEY (CourseID) REFERENCES Course(CourseID)
 );
 
--- Insert values into Enrollment table
+
 INSERT INTO Enrollment (EnrollmentID, StudentID, CourseID)
 VALUES
 (1, 1001, 201),
@@ -30,8 +27,6 @@ VALUES
 (4, 1003, 201);
 
 
--- LEFT JOIN
--- Displays all courses and matching enrollments
 SELECT
     Course.CourseID,
     Course.CourseName,
@@ -43,8 +38,6 @@ LEFT JOIN Enrollment
     ON Course.CourseID = Enrollment.CourseID;
 
 
--- RIGHT JOIN
--- Displays all enrollments and matching courses
 SELECT
     Course.CourseID,
     Course.CourseName,
