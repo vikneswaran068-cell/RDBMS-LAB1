@@ -1,4 +1,4 @@
--CREATE DATABASE CollegeDB;
+CREATE DATABASE CollegeDB;
 USE CollegeDB;
 
 CREATE TABLE Marksheet (
@@ -8,7 +8,6 @@ CREATE TABLE Marksheet (
     Marks INT
 );
 
--- Insert sample values
 INSERT INTO Marksheet (RollNo, Name, Department, Marks)
 VALUES
 (1, 'Arun', 'CSE', 85),
@@ -17,8 +16,6 @@ VALUES
 (4, 'Nisha', 'ECE', 67),
 (5, 'Rahul', 'IT', 88);
 
--- Display students whose marks are greater than 80
--- Sort the result in descending order of marks
 SELECT RollNo, Name, Department, Marks
 FROM Marksheet
 WHERE Marks > 80
